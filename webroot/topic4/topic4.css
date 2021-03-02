@@ -1,0 +1,19 @@
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .inner th, .inner td  {
+      padding: 0px;
+      
+  }
+
+  .header {
+      background-color: grey;
+      font-size: 24px;
+  }
