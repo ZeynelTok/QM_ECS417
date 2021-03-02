@@ -17,3 +17,24 @@ table, th, td {
       background-color: grey;
       font-size: 24px;
   }
+
+  #mainform {
+    background-color: #e9fdda;
+    width: 30%;
+    padding: 5px;
+  }
+
+#heading {
+  background-color: #377e22;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  width: 30%;
+}
+
+#section {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #377e22;
+ padding: 5px;
+}
