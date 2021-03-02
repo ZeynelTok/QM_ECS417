@@ -12,21 +12,21 @@
 <body>
     <form method="POST" action="http://webprojects.eecs.qmul.ac.uk/un300/week4/week4_process.php">
         <label for="shirtsize">Shirt Size</label>
-        <select id="shirtsize" name="sizes" form="sizes">
+        <select id="shirt_size" name="shirt_size">
             <option value="XS">XS</option>
             <option value="S">S</option>
             <option value="M">M</option>
             <option value="L">L</option>
             <option value="XL">XL</option>
         </select><br>
-        <label for="sleeve">Sleeve<br>
-            <input type="radio" id="Short" name="Short" value="Short" checked='checked'>
+        <label for="sleeves">Sleeves<br>
+            <input type="radio" id="sleeves" name="sleeves" value="Short" checked='checked'>
             <label for="Short">Short</label><br>
-            <input type="radio" id="Lond" name="Long" value="Long">
+            <input type="radio" id="sleeves" name="sleeves" value="Long">
             <label for="Long">Long</label><br>
         </label>
         <label for="color">Choose Shirt Colour:</label><br>
-        <input type="color" value="#ff0000" id="color"><br>
+        <input type="color" value="#ff0000" id="colour" name="colour"><br>
         <label for="quantity">Quantity:</label><br>
         <input type="number" id="quantity" name="quantity" min="1" max="10"><br>
         <label for="daterequested">Date Requested:</label><br>
