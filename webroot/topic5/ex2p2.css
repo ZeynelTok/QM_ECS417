@@ -1,0 +1,115 @@
+.column {
+    float: left;
+    padding: 10px;
+
+  }
+  
+  .left, .right {
+    width: 15em;
+    margin: 5px;
+  }
+
+  .left {
+  }
+
+  .right {
+      float: right;
+  }
+
+
+.middle {
+    display: block;
+}
+  .row:after {
+    clear: both;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    padding: 2px;
+    
+   }
+ 
+   nav {
+    background-color: #a6eb99;
+    padding: 5px;
+
+   }
+
+#section {
+    display: block;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+strong {
+    font-size: 28px;
+    float: left;
+}
+
+ul#topbar li {
+    display:inline;   
+    padding-right: 3%;
+    font-size: 20px;
+    padding: none;
+
+  }
+
+  p {
+      margin: 5px;
+  }
+
+  h2 {
+      margin: 5px;
+      font-size: 20px;
+  }
+
+  li {
+      padding: 3px;
+  }
+
+aside {
+float: right;
+}
+
+#section {
+    margin-bottom: 50px;
+    margin-right: 100px;
+    float: inline-start;
+}
+
+body {
+    margin: 0px;
+}
+
+#section-researchinterest {
+    background-color: #edebe2;
+    padding: 10px;
+}
+
+#links {
+    background-color: #f5f5f5;
+    padding: 10px;
+    float: inline-start;
+}
+
+#section-skills, #section-hobbies, #section-movies {
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin-top: 15px;
+    position: relative;
+    float: inline-start;
+}
+
+#skills, #hobbies, #movies {
+    padding: 5px;
+    background-color: #a6eb99;  
+}
+#skill, #hobby, #movie {
+    background-color: white;
+}
+
+#skill > aside {
+    float: right;
+}
