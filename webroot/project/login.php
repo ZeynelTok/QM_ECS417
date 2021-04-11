@@ -12,13 +12,13 @@ if(isset($_POST['save']))
         $_SESSION["firstName"]=$row['firstName'];
         $_SESSION["lastName"]=$row['lastName'];
         $_SESSION["email"]=$row['email']; 
-        echo "<script> location.href='blog.php'; </script>";
+        header('Location: ' . $_SERVER['HTTP_REFERER'];);
         exit;
     }
     else
     {
         echo "Invalid Email/Password";
-        echo "<script> location.href='blog.php'; </script>";
+        header('Location: ' . $_SERVER['HTTP_REFERER'];);
         exit;
     }
 
