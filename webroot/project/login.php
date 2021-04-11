@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_POST['save']))
+if(isset($_POST['submit']))
 {
     echo '123';
     extract($_POST);
@@ -25,11 +25,5 @@ if(isset($_POST['save']))
     }
 
     
-}
-if (isset($_SESSION)){
-    $disable = false;
-}
-else {
-    $disable = true;
 }
 ?>
