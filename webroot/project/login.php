@@ -1,6 +1,4 @@
 <?php
-include 'db.php';
-$sql = "INSERT INTO USERS values ('2','test','test','test@gmail.com','test')";
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -16,14 +14,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $_SESSION["firstName"]=$row['firstName'];
         $_SESSION["lastName"]=$row['lastName'];
         $_SESSION["email"]=$row['email']; 
-        header('Location: blog.php');
-        exit;
+        //header('Location: blog.php');
+        //exit;
     }
     else
     {
         echo "Invalid Email/Password";
-        header('Location: blog.php');
-        exit;
+        //header('Location: blog.php');
+        //exit;
     }
     $conn->close();
 
