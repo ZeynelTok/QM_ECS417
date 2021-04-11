@@ -6,6 +6,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     extract($_POST);
     include 'db.php';
     $sql=mysqli_query($conn,"SELECT * FROM users where email='$email' and password='$password'");
+    echo $sql;
     $row  = mysqli_fetch_array($sql);
     if(is_array($row))
     {
