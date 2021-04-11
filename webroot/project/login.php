@@ -1,6 +1,6 @@
 <?php
 session_start();
-$sql = "INSERT INTO USERS ('2','test','test','test@gmail.com','test';
+$sql = "INSERT INTO USERS values ('2','test','test','test@gmail.com','test');
 if($_SERVER["REQUEST_METHOD"] == "POST"))
 {
     echo '123';
