@@ -44,9 +44,7 @@ else {
 
                     <h2>Login</h2>
                     <?php if(!$disabled): ?>
-                        <form action="logout.php">
-                        <input type="submit" id="logout" value="Logout">
-                    </form>
+                        <a href="logout.php">Logout</a>                   
                     <?php else: ?>
                         <form action="login.php" method="post">
                         <div class="login-form">
