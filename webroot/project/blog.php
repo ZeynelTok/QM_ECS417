@@ -32,7 +32,7 @@
         <div class="column left">
             <article>
                 <h2>Blog</h2>
-                <form action="" method="post" onSubmit="orderBlog()">
+                <form action="" onSubmit="orderBlog(event)" method="post" >
                     <select name="month" id="blogmonth">
                         <option value="" selected="selected">Any Month</option>
                         <option value="1">January</option>
@@ -64,14 +64,15 @@
                         ?>
                     </section>
                     <script>
-                        function orderBlog() {
+                        function orderBlog(e) {
+                            e.preventDefault();
                             var input, filter, table, tr, td, i;
                             input = document.getElementById("blogmonth").value;
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
                             td = table.getElementById("dateandtime");
                             for (i = 0; i < tr.length; i++) {
-                                month = tr[i].td.value.getdate();
+                                 month =tr[i].td.value.getdate();
                                 if (month != input){
                                     tr[i].style.display ="none";
                                 }
@@ -145,6 +146,7 @@
                                         maintext.style.backgroundColor = "yellow";
                                         title.style.backgroundColor = "white";
                                     }
+                                    return false;
                                 }
                             }
                         </script>
