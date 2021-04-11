@@ -44,7 +44,9 @@ else {
 
                     <h2>Login</h2>
                     <?php if(!$disabled): ?>
+                        <form action="logout.php">
                         <input type="button" id="logout" value="Logout">
+                    </form>
                     <?php else: ?>
                         <form action="login.php" method="post">
                         <div class="login-form">
@@ -66,15 +68,15 @@ else {
 
                     <h2>Add Blog</h2>
 
-                    <form action="" onsubmit="validateForm(event)">
+                    <form action="addBlog.php" onsubmit="validateForm(event)" method="post">
 
                         <div class="login-form">
 
                             <label for="Title">Title</label>
-                            <input type="text" id="title" <?php if ($disabled){ ?> disabled <?php   } ?> placeholder="title">
+                            <input type="text" id="title" name="title" <?php if ($disabled){ ?> disabled <?php   } ?> placeholder="title">
 
                             <label for="maintext">Enter your text here</label>
-                            <input type="text" id="maintext" <?php if ($disabled){ ?> disabled <?php   } ?> placeholder="maintext">
+                            <input type="text" id="maintext" name="maintext" <?php if ($disabled){ ?> disabled <?php   } ?> placeholder="maintext">
 
                         </div>
 
