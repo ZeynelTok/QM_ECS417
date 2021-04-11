@@ -33,15 +33,38 @@ else {
         <div class="column left">
             <article>
                 <h2>Blog</h2>
+                <form action="" method="post">
+                <select name="month">
+                <option value="" selected="selected">Any Month</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+                </select>
+                <input type="submit" id="Go" value="Go">
+                </form>
                 <div class="blogbox">
                     <section>
                     <?php
                     include 'db.php';   
-                    $blogquery = "SELECT * FROM blogs order by dateandtime desc";
+                    if(!empty($month)) {
+                        $blogquery = "SELECT * FROM blogs where month(dateandtime) = "'.$month.'" order by dateandtime desc";
+                         }
+                         else {
+                            $blogquery = "SELECT * FROM blogs order by dateandtime desc";
+                         }
                     $output = mysqli_query($conn,$blogquery);
                     echo "<table>"; 
                      while($row = mysqli_fetch_array($output)){  
-                    echo "<tr><td>" . $row['dateandtime'] . "</td><td>" . $row['title'] . "</td><td>" . $row['maintext'] . "</td></tr>";  
+                    echo "<tr><td>" . $row['dateandtime'] . "</td><td>" . $row['title'] . "</td><td>" . $row['maintext'] . "</td></tr> <hr>";  
                     }
                     echo "</table>";
                     ?>
