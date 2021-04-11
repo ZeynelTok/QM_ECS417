@@ -13,7 +13,7 @@
             <ul id="topbar">
                 <li><strong>Zeynel Tok</strong></li>
                 <li><a href="about myself.html">About Me</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.php">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -69,14 +69,14 @@
                         <div class="login-form">
 
                             <label for="Title">Title</label>
-                            <input type="text" id="title" placeholder="title">
+                            <input type="text" id="title" <?=($disable ? " disabled=\"disabled\"" : "");?> placeholder="title">
 
                             <label for="maintext">Enter your text here</label>
-                            <input type="text" id="maintext" placeholder="maintext">
+                            <input type="text" id="maintext" <?=($disable ? " disabled=\"disabled\"" : "");?> placeholder="maintext">
 
                         </div>
 
-                        <input type="submit" name="Post" id="Post" value="Post">
+                        <input type="submit" name="Post" id="Post" <?=($disable ? " disabled=\"disabled\"" : "");?> value="Post">
                         <script>
                             function validateForm(e) {
                                 var title = document.getElementById("title");
@@ -98,7 +98,7 @@
                                 }
                             }
                         </script>
-                        <input type="button" name="Clear" id="Clear" value="Clear" onclick="alertWindow()">
+                        <input type="button" name="Clear" id="Clear" value="Clear" <?=($disable ? " disabled=\"disabled\"" : "");?> onclick="alertWindow()">
                         <script>
                             function alertWindow() {
                                 if (confirm("Are you sure you want to clear?")) {
