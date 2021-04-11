@@ -58,7 +58,7 @@
                         $output = mysqli_query($conn, $blogquery);
                         echo "<table id='blogPosts'>";
                         while ($row = mysqli_fetch_array($output)) {
-                            echo "<tr id ='blogrow'><td id='date'>" . $row['dateandtime'] . "</td><td id='blogtitle'>" . $row['title'] . "</td><td id='maintext'>" . $row['maintext'] . "</td></tr>";
+                            echo "<tr id ='blogrow'><td id='date'>" . $row['dateandtime'] . "</td><td id='blogtitle'>" . $row['title'] . "</td><td id='blogmaintext'>" . $row['maintext'] . "</td></tr>";
                         }
                         echo "</table>";
                         ?>
@@ -149,12 +149,12 @@
                             }
                         </script>
                         <script>
-                            function alertWindow() {
+                            function alertWindow(maintext, title) {
                                 console.log(title.value);
                                 console.log(maintext.value);
                                 if (confirm("Are you sure you want to clear?")) {
-                                    title.value[0] = "";
-                                    maintext.value[0] = "";
+                                    title.value = "";
+                                    maintext.value = "";
                                 }
                             }
                         </script>
