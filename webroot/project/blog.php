@@ -59,7 +59,7 @@ else {
                         </div>
 
                         <input type="submit" id="submit" <?=($disable ? "" : "disabled=\"disabled\"");?> value="Login">
-                        <input type="submit" id="submit" <?=($disable ? " disabled=\"disabled\"" : "");?> value="Logout">
+                        <input type="submit" id="logout" <?=($disable ? " disabled=\"disabled\"" : "");?> value="Logout">
 
 
 
