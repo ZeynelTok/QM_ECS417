@@ -43,7 +43,7 @@ else {
                 <div class="box">
 
                     <h2>Login</h2>
-                    <?php if(!$disabled): ?>
+                    <?php if(isset($_SESSION['ID'])): ?>
                         <form action="logout.php">
                         <input type="submit" id="logout" value="Logout">
                     </form>
