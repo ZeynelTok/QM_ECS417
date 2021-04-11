@@ -20,55 +20,64 @@
     </header>
 
 <body>
-<?php
-session_start();
-if (!isset($_SESSION['ID'])){
-    $disable = true;
-}
-else {
-    $disable = false;
-}
-?>
+    <?php
+    session_start();
+    if (!isset($_SESSION['ID'])) {
+        $disable = true;
+    } else {
+        $disable = false;
+    }
+    ?>
     <div class="row">
         <div class="column left">
             <article>
                 <h2>Blog</h2>
-                <form action="" method="post">
-                <select name="month">
-                <option value="" selected="selected">Any Month</option>
-                <option value="1">January</option>
-                <option value="2">February</option>
-                <option value="3">March</option>
-                <option value="4">April</option>
-                <option value="5">May</option>
-                <option value="6">June</option>
-                <option value="7">July</option>
-                <option value="8">August</option>
-                <option value="9">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-                </select>
-                <input type="submit" id="Go" value="Go">
+                <form action="" method="post" onSubmit="orderBlog()">
+                    <select name="month" id="month">
+                        <option value="" selected="selected">Any Month</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    <input type="submit" id="Go" value="Go">
                 </form>
                 <div class="blogbox">
                     <section>
-                    <?php
-                    include 'db.php';   
-                    if(!empty($month)) {
-                        $blogquery = "SELECT * FROM blogs where month(dateandtime) = "'.$month.'" order by dateandtime desc";
-                         }
-                         else {
-                            $blogquery = "SELECT * FROM blogs order by dateandtime desc";
-                         }
-                    $output = mysqli_query($conn,$blogquery);
-                    echo "<table>"; 
-                     while($row = mysqli_fetch_array($output)){  
-                    echo "<tr><td>" . $row['dateandtime'] . "</td><td>" . $row['title'] . "</td><td>" . $row['maintext'] . "</td></tr> <hr>";  
-                    }
-                    echo "</table>";
-                    ?>
+                        <?php
+                        include 'db.php';
+                        $blogquery = "SELECT * FROM blogs order by dateandtime desc";
+                        $output = mysqli_query($conn, $blogquery);
+                        echo "<table id='blogPosts'>";
+                        while ($row = mysqli_fetch_array($output)) {
+                            echo "<tr><td id='date'>" . $row['dateandtime'] . "</td><td id='title'>" . $row['title'] . "</td><td id='maintext'>" . $row['maintext'] . "</td></tr> <hr>";
+                        }
+                        echo "</table>";
+                        ?>
                     </section>
+                    <script>
+                        function orderBlog() {
+                            var input, filter, table, tr, td, i;
+                            input = document.getElementById("month");
+                            table = document.getElementById("blogPosts");
+                            tr = table.getElementsByTagName("tr");
+                            td = table.getElementById("dateandtime");
+                            for (i = 0; i < tr.length; i++) {
+                                month = tr[i].td.value.getdate();
+                                if (month != input){
+                                    tr[i].style.display ="none";
+                                }
+                            }
+                        }
+                    </script>
                 </div>
 
             </article>
@@ -78,25 +87,25 @@ else {
                 <div class="box">
 
                     <h2>Login</h2>
-                    <?php if(isset($_SESSION['ID'])): ?>
-                        
+                    <?php if (isset($_SESSION['ID'])) : ?>
+
                         <form action="logout.php">
-                            <P>You are logged in as <?=$_SESSION['firstName']?></P>
-                        <input type="submit" id="logout" value="Logout">
-                    </form>
-                    <?php else: ?>
+                            <P>You are logged in as <?= $_SESSION['firstName'] ?></P>
+                            <input type="submit" id="logout" value="Logout">
+                        </form>
+                    <?php else : ?>
                         <form action="login.php" method="post">
-                        <div class="login-form">
+                            <div class="login-form">
 
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="Email">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="Email">
 
-                            <label for="password">Password</label>
-                            <input type="password" id="password" name="password" required placeholder="Password">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required placeholder="Password">
 
-                        </div>
-                        <input type="submit" id="submit" value="Login">                       
-                    </form>
+                            </div>
+                            <input type="submit" id="submit" value="Login">
+                        </form>
                     <?php endif ?>
                 </div>
             </aside>
@@ -110,14 +119,14 @@ else {
                         <div class="login-form">
 
                             <label for="Title">Title</label>
-                            <input type="text" id="title" name="title" <?=($disable ? " disabled=\"disabled\"" : "");?> placeholder="title">
+                            <input type="text" id="title" name="title" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> placeholder="title">
 
                             <label for="maintext">Enter your text here</label>
-                            <input type="text" id="maintext" name="maintext" <?=($disable ? " disabled=\"disabled\"" : "");?> placeholder="maintext">
+                            <input type="text" id="maintext" name="maintext" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> placeholder="maintext">
 
                         </div>
 
-                        <input type="submit" name="Post" id="Post" <?=($disable ? " disabled=\"disabled\"" : "");?> value="Post">
+                        <input type="submit" name="Post" id="Post" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Post">
                         <script>
                             function validateForm(e) {
                                 var title = document.getElementById("title");
@@ -129,19 +138,17 @@ else {
                                     if (title.value == "" && maintext.value == "") {
                                         title.style.backgroundColor = "yellow";
                                         maintext.style.backgroundColor = "yellow";
-                                    }
-                                    else if (title.value ==""){
+                                    } else if (title.value == "") {
                                         title.style.backgroundColor = "yellow";
                                         maintext.style.backgroundColor = "white";
-                                    }
-                                    else {
+                                    } else {
                                         maintext.style.backgroundColor = "yellow";
                                         title.style.backgroundColor = "white";
                                     }
                                 }
                             }
                         </script>
-                        <input type="button" name="Clear" id="Clear" value="Clear" <?=($disable ? " disabled=\"disabled\"" : "");?> onclick="alertWindow()">
+                        <input type="button" name="Clear" id="Clear" value="Clear" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> onclick="alertWindow()">
                         <script>
                             function alertWindow() {
                                 if (confirm("Are you sure you want to clear?")) {
