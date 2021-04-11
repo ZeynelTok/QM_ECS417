@@ -20,7 +20,14 @@
     </header>
 
 <body>
-
+<?php
+if (isset($_SESSION)){
+    $disable = false;
+}
+else {
+    $disable = true;
+}
+?>
     <div class="row">
         <div class="column left">
             <article>
