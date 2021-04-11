@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<?php
-if (isset($_SESSION)){
-    $disable = false;
-}
-else {
-    $disable = true;
-}
-?>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="main.css">
@@ -27,7 +20,14 @@ else {
     </header>
 
 <body>
-
+<?php
+if (isset($_SESSION)){
+    $disable = false;
+}
+else {
+    $disable = true;
+}
+?>
     <div class="row">
         <div class="column left">
             <article>
