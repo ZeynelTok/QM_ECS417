@@ -33,7 +33,7 @@
             <article>
                 <h2>Blog</h2>
                 <form action="" method="post" onSubmit="orderBlog()">
-                    <select name="month" id="month">
+                    <select name="month" id="blogmonth">
                         <option value="" selected="selected">Any Month</option>
                         <option value="1">January</option>
                         <option value="2">February</option>
@@ -66,7 +66,7 @@
                     <script>
                         function orderBlog() {
                             var input, filter, table, tr, td, i;
-                            input = document.getElementById("month");
+                            input = document.getElementById("blogmonth").value;
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
                             td = table.getElementById("dateandtime");
