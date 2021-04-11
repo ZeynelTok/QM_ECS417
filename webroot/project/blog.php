@@ -44,7 +44,7 @@ else {
 
                     <h2>Login</h2>
 
-                    <form action="login.php" method="post">
+                    <form action="" method="post">
 
 
 
@@ -59,6 +59,7 @@ else {
                         </div>
 
                         <input type="submit" id="submit" <?=($disable ? "" : "disabled=\"disabled\"");?> value="Login">
+                        <input type="submit" id="submit" <?=($disable ? " disabled=\"disabled\"" : "");?> value="Logout">
 
 
 
