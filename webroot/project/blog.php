@@ -21,11 +21,11 @@
 
 <body>
 <?php
-if (isset($_SESSION)){
-    $disable = false;
+if (!isset($_SESSION)){
+    $disable = true;
 }
 else {
-    $disable = true;
+    $disable = false;
 }
 ?>
     <div class="row">
@@ -43,20 +43,20 @@ else {
                 <div class="box">
 
                     <h2>Login</h2>
-                    <?php if(isset($_SESSION)): ?>
-                        <input type="button" id="logout" <?=($disable ? " disabled=\"disabled\"" : "");?> value="Logout">
+                    <?php if(!$disabled): ?>
+                        <input type="button" id="logout" value="Logout">
                     <?php else: ?>
                         <form action="login.php" method="post">
                         <div class="login-form">
 
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" <?=($disable ? "" : "disabled=\"disabled\"");?>required placeholder="Email">
+                            <input type="email" id="email" name="email" required placeholder="Email">
 
                             <label for="password">Password</label>
-                            <input type="password" id="password" name="password" <?=($disable ? "" : "disabled=\"disabled\"");?> required placeholder="Password">
+                            <input type="password" id="password" name="password" required placeholder="Password">
 
                         </div>
-                        <input type="submit" id="submit" <?=($disable ? "" : "disabled=\"disabled\"");?> value="Login">                       
+                        <input type="submit" id="submit" value="Login">                       
                     </form>
                     <?php endif ?>
                 </div>
@@ -71,14 +71,14 @@ else {
                         <div class="login-form">
 
                             <label for="Title">Title</label>
-                            <input type="text" id="title" <?=($disable ? " disabled=\"disabled\"" : "");?> placeholder="title">
+                            <input type="text" id="title" <?php if ($disabled){ ?> disabled <?php   } ?> placeholder="title">
 
                             <label for="maintext">Enter your text here</label>
-                            <input type="text" id="maintext" <?=($disable ? " disabled=\"disabled\"" : "");?> placeholder="maintext">
+                            <input type="text" id="maintext" <?php if ($disabled){ ?> disabled <?php   } ?> placeholder="maintext">
 
                         </div>
 
-                        <input type="submit" name="Post" id="Post" <?=($disable ? " disabled=\"disabled\"" : "");?> value="Post">
+                        <input type="submit" name="Post" id="Post" <?php if ($disabled){ ?> disabled <?php   } ?> value="Post">
                         <script>
                             function validateForm(e) {
                                 var title = document.getElementById("title");
@@ -100,7 +100,7 @@ else {
                                 }
                             }
                         </script>
-                        <input type="button" name="Clear" id="Clear" value="Clear" <?=($disable ? " disabled=\"disabled\"" : "");?> onclick="alertWindow()">
+                        <input type="button" name="Clear" id="Clear" value="Clear" <?php if ($disabled){ ?> disabled <?php   } ?> onclick="alertWindow()">
                         <script>
                             function alertWindow() {
                                 if (confirm("Are you sure you want to clear?")) {

@@ -2,7 +2,6 @@
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    echo $disable;
     include 'db.php';   
     $sql_query = "select * from users where email='".$_POST['email']."' and password='".$_POST['password']."'";
         $result = mysqli_query($conn,$sql_query);
@@ -12,8 +11,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $_SESSION["firstName"]=$row['firstName'];
             $_SESSION["lastName"]=$row['lastName'];
             $_SESSION["email"]=$row['email']; 
-            $disable = false;
-            echo $disable;
             //header('Location: blog.php');
             //exit;
         }
