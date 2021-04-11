@@ -10,8 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         echo $row;
         $count = $row['count'];
         echo $count;
-        if($count > 0){
-    {
+        if($count > 0){    
         echo '456';
         $_SESSION["ID"]=$row['ID'];
         $_SESSION["firstName"]=$row['firstName'];
