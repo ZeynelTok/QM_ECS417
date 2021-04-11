@@ -3,11 +3,14 @@ session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     echo '123';
+    echo $_POST["email"];
+    echo $_POST["password"];
     extract($_POST);
+    echo $_POST["email"];
+    echo $_POST["password"];
     include 'db.php';
     $sql=mysqli_query($conn,"SELECT * FROM users where email='$email' and password='$password'");  
     $row  = mysqli_fetch_array($sql);
-    echo $row;
     if(is_array($row))
     {
         echo '456';
