@@ -4,7 +4,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     echo '123';
     include 'db.php';   
-    $sql_query = "select count(*) as count from users where email='".$email."' and password='".$password."'";
+    $sql_query = "select count(*) as count from users where email='".$_POST['email']."' and password='".$_POST['password']."'";
         $result = mysqli_query($conn,$sql_query);
         $row = mysqli_fetch_array($result);
         echo $sql_query;
