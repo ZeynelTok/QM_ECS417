@@ -149,7 +149,9 @@
                             }
                         </script>
                         <script>
-                            function alertWindow(maintext, title) {
+                            function alertWindow() {
+                                var title = document.getElementById("title");
+                                var maintext = document.getElementById("maintext");
                                 console.log(title.value);
                                 console.log(maintext.value);
                                 if (confirm("Are you sure you want to clear?")) {
@@ -158,7 +160,7 @@
                                 }
                             }
                         </script>
-                        <input type="button" name="Clear" id="Clear" value="Clear" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> onclick=" return alertWindow(maintext,title)">
+                        <input type="button" name="Clear" id="Clear" value="Clear" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> onclick=" return alertWindow()">
 
 
 
