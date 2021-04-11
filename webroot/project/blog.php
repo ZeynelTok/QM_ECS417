@@ -32,7 +32,7 @@
         <div class="column left">
             <article>
                 <h2>Blog</h2>
-                <form action="" onSubmit="orderBlog(event)" method="post" >
+                <form action="" onSubmit="orderBlog(event)" method="post">
                     <select name="month" id="blogmonth">
                         <option value="" selected="selected">Any Month</option>
                         <option value="1">January</option>
@@ -129,7 +129,7 @@
 
                         <input type="submit" name="Post" id="Post" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Post">
                         <script>
-                            function validateForm(e,title,maintext) {
+                            function validateForm(e, title, maintext) {
                                 //var title = document.getElementById("title");
                                 //var maintext = document.getElementById("maintext");
                                 if (title.value == "" || maintext.value == "") {
@@ -148,20 +148,18 @@
                                 }
                             }
                         </script>
-                        <input type="button" name="Clear" id="Clear" value="Clear" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> onclick="alertWindow()">
                         <script>
                             function alertWindow() {
-                                var title = document.getElementById("title");
-                                var maintext = document.getElementById("maintext");
                                 console.log(title.value);
                                 console.log(maintext.value);
                                 if (confirm("Are you sure you want to clear?")) {
-                                    title.value = "";
-                                    maintext.value = "";
+                                    title.value[0] = "";
+                                    maintext.value[0] = "";
                                 }
-                                
                             }
                         </script>
+                        <input type="button" name="Clear" id="Clear" value="Clear" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> onclick=" return alertWindow(maintext,title)">
+
 
 
                     </form>
