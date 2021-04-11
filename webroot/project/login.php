@@ -5,9 +5,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     echo '123';
     extract($_POST);
     include 'db.php';
-    $sql=mysqli_query($conn,"SELECT * FROM users where email='$email' and password='$password'");
-    echo $sql;
+    $sql=mysqli_query($conn,"SELECT * FROM users where email='$email' and password='$password'");  
     $row  = mysqli_fetch_array($sql);
+    echo $row;
     if(is_array($row))
     {
         echo '456';
