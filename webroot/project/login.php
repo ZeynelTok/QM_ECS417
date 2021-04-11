@@ -12,14 +12,14 @@ if(isset($_POST['save']))
         $_SESSION["firstName"]=$row['firstName'];
         $_SESSION["lastName"]=$row['lastName'];
         $_SESSION["email"]=$row['email']; 
-        header("Location: blog.php");
-        exit();
+        echo "<script> location.href='blog.php'; </script>";
+        exit;
     }
     else
     {
         echo "Invalid Email/Password";
-        header("Location: blog.php");
-        exit();
+        echo "<script> location.href='blog.php'; </script>";
+        exit;
     }
 
     
