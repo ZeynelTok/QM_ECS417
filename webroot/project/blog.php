@@ -2,7 +2,7 @@
 
 <html lang="en">
 <?php
-if (isset($_SESSION['ID'])){
+if (isset($_SESSION)){
     $disable = false;
 }
 else {
@@ -43,7 +43,7 @@ else {
                 <div class="box">
 
                     <h2>Login</h2>
-                    <?php if(isset($_SESSION['ID'])): ?>
+                    <?php if(isset($_SESSION)): ?>
                         <input type="button" id="logout" <?=($disable ? " disabled=\"disabled\"" : "");?> value="Logout">
                     <?php else: ?>
                         <form action="login.php" method="post">
