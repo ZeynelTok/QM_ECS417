@@ -15,9 +15,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             exit;
         }
         else
-        {
-            echo "Invalid Email/Password";
+        {           
             header('Location: blog.php');
+            alert("Incorrect Email/Password");
             exit;
         }
         $conn->close();   

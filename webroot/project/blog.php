@@ -34,7 +34,18 @@ else {
             <article>
                 <h2>Blog</h2>
                 <div class="blogbox">
-                    <section></section>
+                    <section>
+                    <?php
+                    include 'db.php';   
+                    $blogquery = "SELECT * FROM blogs";
+                    $output = mysqli_query($conn,$blogquery);
+                    echo "<table>"; 
+                     while($row = mysqli_fetch_array($output)){  
+                    echo "<tr><td>" . $row['datetime'] . "</td><td>" . $row['title'] . "</td><td>" . $row['maintext'] . "</td></tr>";  
+                    }
+                    echo "</table>";
+                    ?>
+                    </section>
                 </div>
 
             </article>
