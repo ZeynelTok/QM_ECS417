@@ -1,7 +1,7 @@
 <?php
-echo 'test';
-session_start();
+include 'db.php';
 $sql = "INSERT INTO USERS values ('2','test','test','test@gmail.com','test')";
+session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     echo '123';
