@@ -12,8 +12,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $_SESSION["firstName"]=$row['firstName'];
             $_SESSION["lastName"]=$row['lastName'];
             $_SESSION["email"]=$row['email']; 
-            header('Location: blog.php');
-            exit;
+            echo $row['email'];
+            echo $row['ID'];
+            //header('Location: blog.php');
+            //exit;
         }
         else
         {

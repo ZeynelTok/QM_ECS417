@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
+<?php
+if (isset($_SESSION['ID'])){
+    $disable = false;
+}
+else {
+    $disable = true;
+}
+?>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="main.css">
@@ -20,14 +27,7 @@
     </header>
 
 <body>
-<?php
-if (isset($_SESSION)){
-    $disable = false;
-}
-else {
-    $disable = true;
-}
-?>
+
     <div class="row">
         <div class="column left">
             <article>
@@ -43,11 +43,10 @@ else {
                 <div class="box">
 
                     <h2>Login</h2>
-
-                    <form action="login.php" method="post">
-
-
-
+                    <?php if(isset($_SESSION['ID'])): ?>
+                        <input type="button" id="logout" <?=($disable ? " disabled=\"disabled\"" : "");?> value="Logout">
+                    <?php else: ?>
+                        <form action="login.php" method="post">
                         <div class="login-form">
 
                             <label for="email">Email</label>
@@ -57,14 +56,9 @@ else {
                             <input type="password" id="password" name="password" <?=($disable ? "" : "disabled=\"disabled\"");?> required placeholder="Password">
 
                         </div>
-
-                        <input type="submit" id="submit" <?=($disable ? "" : "disabled=\"disabled\"");?> value="Login">
-                        <input type="button" id="logout" <?=($disable ? " disabled=\"disabled\"" : "");?> value="Logout">
-
-
-
-
+                        <input type="submit" id="submit" <?=($disable ? "" : "disabled=\"disabled\"");?> value="Login">                       
                     </form>
+                    <?php endif ?>
                 </div>
             </aside>
             <aside>
