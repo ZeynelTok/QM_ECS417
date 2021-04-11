@@ -3,11 +3,10 @@ session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     include 'db.php';   
-    $sql_query = "select count(*) as count from users where email='".$_POST['email']."' and password='".$_POST['password']."'";
+    $sql_query = "select * from users where email='".$_POST['email']."' and password='".$_POST['password']."'";
         $result = mysqli_query($conn,$sql_query);
         $row = mysqli_fetch_array($result);
-        $count = $row['count'];
-        if($count > 0){
+        if(mysqli_num_rows($result)>0){
             $_SESSION["ID"]=$row['ID'];
             $_SESSION["firstName"]=$row['firstName'];
             $_SESSION["lastName"]=$row['lastName'];
