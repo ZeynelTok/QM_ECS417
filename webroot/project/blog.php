@@ -45,7 +45,9 @@ else {
 
                     <h2>Login</h2>
                     <?php if(isset($_SESSION['ID'])): ?>
+                        
                         <form action="logout.php">
+                            <P>You are logged in as <?=$_SESSION['firstName']?></P>
                         <input type="submit" id="logout" value="Logout">
                     </form>
                     <?php else: ?>
@@ -96,9 +98,11 @@ else {
                                     }
                                     else if (title.value ==""){
                                         title.style.backgroundColor = "yellow";
+                                        maintext.style.backgroundColor = "white";
                                     }
                                     else {
                                         maintext.style.backgroundColor = "yellow";
+                                        title.style.backgroundColor = "white";
                                     }
                                 }
                             }
