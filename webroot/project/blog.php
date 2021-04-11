@@ -155,6 +155,7 @@
                                     title.value = "";
                                     maintext.value = "";
                                 }
+                                return false;
                             }
                         </script>
 
