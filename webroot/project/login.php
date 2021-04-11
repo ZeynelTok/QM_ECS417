@@ -12,12 +12,12 @@ if(isset($_POST['save']))
         $_SESSION["firstName"]=$row['firstName'];
         $_SESSION["lastName"]=$row['lastName'];
         $_SESSION["email"]=$row['email']; 
-        $url = "blog.php";
-        header("Location: $url");
+        header("Location: blog.php");
     }
     else
     {
         echo "Invalid Email/Password";
+        header("Location: blog.php");
     }
 
     
