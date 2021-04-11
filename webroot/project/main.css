@@ -193,26 +193,26 @@ justify-content: space-evenly;}
     position: relative;
     left: 0;
   }
-  #submit {
+  #submit, #logout {
     margin: 5px;
     width: 75px;
     background: #9b2;
     color: #140;
     border-color: #471;
   }
-  #submit:hover {
+  #submit:hover, #logout:hover {
     color: #025;
     background: #28e;
     border-color: #16c;
   }
-  #submit ~ a {
+  #submit ~ a, #logout ~ a {
     display: block;
     float: left;
     width: 120px;
     text-decoration: none;
     color: #666;
   }
-  #submit ~ a:hover {
+  #submit ~ a:hover, #logout ~ a:hover {
     text-decoration: underline;
   }
   #maintext {
