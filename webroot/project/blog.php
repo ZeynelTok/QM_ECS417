@@ -63,7 +63,7 @@
                         echo "</table>";
                         ?>
                     </section>
-                    <script>
+                    <!-- <script>
                         function orderBlog(e) {
                             e.preventDefault();
                             var input, filter, table, tr, td, i;
@@ -78,7 +78,7 @@
                                 }
                             }
                         }
-                    </script>
+                    </script> -->
                 </div>
 
             </article>
