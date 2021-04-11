@@ -58,7 +58,7 @@
                         $output = mysqli_query($conn, $blogquery);
                         echo "<table id='blogPosts'>";
                         while ($row = mysqli_fetch_array($output)) {
-                            echo "<tr><td id='date'>" . $row['dateandtime'] . "</td><td id='title'>" . $row['title'] . "</td><td id='maintext'>" . $row['maintext'] . "</td></tr> <hr>";
+                            echo "<tr id ='blogrow'><td id='date'>" . $row['dateandtime'] . "</td><td id='title'>" . $row['title'] . "</td><td id='maintext'>" . $row['maintext'] . "</td></tr>";
                         }
                         echo "</table>";
                         ?>

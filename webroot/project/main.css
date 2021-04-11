@@ -238,3 +238,7 @@ justify-content: space-evenly;}
   .highlight {
     background-color: yellow;
   }
+
+  #blogrow {
+    border-bottom: 1px solid #000;
+  }
