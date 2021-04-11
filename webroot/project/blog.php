@@ -44,7 +44,7 @@ else {
 
                     <h2>Login</h2>
 
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                    <form action="login.php" method="post">
 
 
 
