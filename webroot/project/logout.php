@@ -7,6 +7,6 @@ unset($_SESSION["lastName"]);
 unset($_SESSION["email"]); 
 session_destroy();
 $disable = true;
-header('Location: blog.php');
+header('Location: about myself.html');
 exit;
 ?>
