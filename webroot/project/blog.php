@@ -58,7 +58,7 @@
                         $output = mysqli_query($conn, $blogquery);
                         echo "<table id='blogPosts'>";
                         while ($row = mysqli_fetch_array($output)) {
-                            echo "<tr id ='blogrow'><td id='date'>" . $row['dateandtime'] . "</td><td id='title'>" . $row['title'] . "</td><td id='maintext'>" . $row['maintext'] . "</td></tr>";
+                            echo "<tr id ='blogrow'><td id='date'>" . $row['dateandtime'] . "</td><td id='blogtitle'>" . $row['title'] . "</td><td id='maintext'>" . $row['maintext'] . "</td></tr>";
                         }
                         echo "</table>";
                         ?>
@@ -119,7 +119,7 @@
 
                         <div class="login-form">
 
-                            <label for="Title">Title</label>
+                            <label for="title">Title</label>
                             <input type="text" id="title" name="title" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> placeholder="title">
 
                             <label for="maintext">Enter your text here</label>
