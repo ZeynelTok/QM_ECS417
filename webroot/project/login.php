@@ -1,7 +1,8 @@
 <?php
+echo 'test';
 session_start();
 $sql = "INSERT INTO USERS values ('2','test','test','test@gmail.com','test')";
-if($_SERVER["REQUEST_METHOD"] == "POST"))
+if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     echo '123';
     extract($_POST);
