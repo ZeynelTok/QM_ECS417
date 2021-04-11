@@ -148,14 +148,18 @@
                                 }
                             }
                         </script>
-                        <input type="button" name="Clear" id="Clear" value="Clear" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> onclick="alertWindow(maintext)">
+                        <input type="button" name="Clear" id="Clear" value="Clear" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> onclick="alertWindow()">
                         <script>
                             function alertWindow() {
+                                var title = document.getElementById("title");
+                                var maintext = document.getElementById("maintext");
+                                console.log(title.value);
+                                console.log(maintext.value);
                                 if (confirm("Are you sure you want to clear?")) {
-                                    document.getElementById("title").value = "";
+                                    title.value = "";
                                     maintext.value = "";
                                 }
-                                return false;
+                                
                             }
                         </script>
 
