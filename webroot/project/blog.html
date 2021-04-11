@@ -37,7 +37,7 @@
 
                     <h2>Login</h2>
 
-                    <form action="">
+                    <form action="login.php" method="post">
 
 
 
@@ -64,27 +64,53 @@
 
                     <h2>Add Blog</h2>
 
-                    <form action="">
-
-
+                    <form action="" onsubmit="validateForm(event)">
 
                         <div class="login-form">
 
                             <label for="Title">Title</label>
-                            <input type="text" id="title" required placeholder="title">
+                            <input type="text" id="title" placeholder="title">
 
                             <label for="maintext">Enter your text here</label>
-                            <input type="text" id="maintext" required placeholder="maintext">
+                            <input type="text" id="maintext" placeholder="maintext">
 
                         </div>
 
-                        <input type="submit" id="Post" value="Post">
-                        <input type="submit" id="Clear" value="Clear">
-
-
+                        <input type="submit" name="Post" id="Post" value="Post">
+                        <script>
+                            function validateForm(e) {
+                                var title = document.getElementById("title");
+                                var maintext = document.getElementById("maintext");
+                                console.log(title);
+                                console.log(maintext);
+                                if (title.value == "" || maintext.value == "") {
+                                    e.preventDefault();
+                                    if (title.value == "" && maintext.value == "") {
+                                        title.style.backgroundColor = "yellow";
+                                        maintext.style.backgroundColor = "yellow";
+                                    }
+                                    else if (title.value ==""){
+                                        title.style.backgroundColor = "yellow";
+                                    }
+                                    else {
+                                        maintext.style.backgroundColor = "yellow";
+                                    }
+                                }
+                            }
+                        </script>
+                        <input type="button" name="Clear" id="Clear" value="Clear" onclick="alertWindow()">
+                        <script>
+                            function alertWindow() {
+                                if (confirm("Are you sure you want to clear?")) {
+                                    document.getElementById("title").value = "";
+                                    document.getElementById("maintext").value = "";
+                                }
+                            }
+                        </script>
 
 
                     </form>
+
                 </div>
             </aside>
         </div>
