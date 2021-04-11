@@ -8,7 +8,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $sql_query = "INSERT INTO blogs (dateandtime, title, maintext) VALUES ('$date', '".$_POST['title']."', '".$_POST['maintext']."')";
     echo $sql_query;
     if(mysqli_query($conn, $sql_query)){
-        echo ('123');
         header('Location: blog.php');
         exit;
     }

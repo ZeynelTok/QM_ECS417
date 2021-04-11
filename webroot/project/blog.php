@@ -115,7 +115,7 @@
 
                     <h2>Add Blog</h2>
 
-                    <form action="addBlog.php" onsubmit="validateForm(event)" method="post">
+                    <form action="addBlog.php" onsubmit="validateForm(event,title,maintext)" method="post">
 
                         <div class="login-form">
 
@@ -129,11 +129,9 @@
 
                         <input type="submit" name="Post" id="Post" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Post">
                         <script>
-                            function validateForm(e) {
-                                var title = document.getElementById("title");
-                                var maintext = document.getElementById("maintext");
-                                console.log(title);
-                                console.log(maintext);
+                            function validateForm(e,title,maintext) {
+                                //var title = document.getElementById("title");
+                                //var maintext = document.getElementById("maintext");
                                 if (title.value == "" || maintext.value == "") {
                                     e.preventDefault();
                                     if (title.value == "" && maintext.value == "") {
