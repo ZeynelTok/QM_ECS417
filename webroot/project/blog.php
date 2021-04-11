@@ -74,14 +74,14 @@ else {
                         <div class="login-form">
 
                             <label for="Title">Title</label>
-                            <input type="text" id="title" name="title" <?php if ($disabled){ ?> disabled <?php   } ?> placeholder="title">
+                            <input type="text" id="title" name="title" <?=($disable ? " disabled=\"disabled\"" : "");?> placeholder="title">
 
                             <label for="maintext">Enter your text here</label>
-                            <input type="text" id="maintext" name="maintext" <?php if ($disabled){ ?> disabled <?php   } ?> placeholder="maintext">
+                            <input type="text" id="maintext" name="maintext" <?=($disable ? " disabled=\"disabled\"" : "");?> placeholder="maintext">
 
                         </div>
 
-                        <input type="submit" name="Post" id="Post" <?php if ($disabled){ ?> disabled <?php   } ?> value="Post">
+                        <input type="submit" name="Post" id="Post" <?=($disable ? " disabled=\"disabled\"" : "");?> value="Post">
                         <script>
                             function validateForm(e) {
                                 var title = document.getElementById("title");
@@ -103,7 +103,7 @@ else {
                                 }
                             }
                         </script>
-                        <input type="button" name="Clear" id="Clear" value="Clear" <?php if ($disabled){ ?> disabled <?php   } ?> onclick="alertWindow()">
+                        <input type="button" name="Clear" id="Clear" value="Clear" <?=($disable ? " disabled=\"disabled\"" : "");?> onclick="alertWindow()">
                         <script>
                             function alertWindow() {
                                 if (confirm("Are you sure you want to clear?")) {
