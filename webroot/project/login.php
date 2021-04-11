@@ -12,7 +12,7 @@ if(isset($_POST['save']))
         $_SESSION["firstName"]=$row['firstName'];
         $_SESSION["lastName"]=$row['lastName'];
         $_SESSION["email"]=$row['email']; 
-        $url = "blog.html";
+        $url = "blog.php";
         header("Location: $url");
     }
     else

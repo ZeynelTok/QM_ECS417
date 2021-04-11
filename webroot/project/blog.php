@@ -51,14 +51,14 @@ else {
                         <div class="login-form">
 
                             <label for="email">Email</label>
-                            <input type="email" id="email" required placeholder="Email">
+                            <input type="email" id="email"  <?=($disable ? "" : "disabled=\"disabled\"");?>required placeholder="Email">
 
                             <label for="password">Password</label>
-                            <input type="password" id="password" required placeholder="Password">
+                            <input type="password" id="password" <?=($disable ? "" : "disabled=\"disabled\"");?> required placeholder="Password">
 
                         </div>
 
-                        <input type="submit" id="submit" value="Login">
+                        <input type="submit" id="submit" <?=($disable ? "" : "disabled=\"disabled\"");?> value="Login">
 
 
 

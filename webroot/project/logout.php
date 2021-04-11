@@ -2,5 +2,5 @@
 session_start();
 session_unset();
 session_write_close();
-$url = "blog.html";
+$url = "blog.php";
 header("Location: $url");
