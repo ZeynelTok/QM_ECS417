@@ -37,11 +37,11 @@ else {
                     <section>
                     <?php
                     include 'db.php';   
-                    $blogquery = "SELECT * FROM blogs";
+                    $blogquery = "SELECT * FROM blogs order by dateandtime desc";
                     $output = mysqli_query($conn,$blogquery);
                     echo "<table>"; 
                      while($row = mysqli_fetch_array($output)){  
-                    echo "<tr><td>" . $row['datetime'] . "</td><td>" . $row['title'] . "</td><td>" . $row['maintext'] . "</td></tr>";  
+                    echo "<tr><td>" . $row['dateandtime'] . "</td><td>" . $row['title'] . "</td><td>" . $row['maintext'] . "</td></tr>";  
                     }
                     echo "</table>";
                     ?>
