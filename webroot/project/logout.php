@@ -1,7 +1,7 @@
 <?php
 session_start();
+session_unset();
 session_destroy();
-echo('here');
-//header('Location: blog.php');
-//exit;
+header('Location: blog.php');
+exit;
 ?>
