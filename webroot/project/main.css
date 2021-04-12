@@ -255,11 +255,17 @@ justify-content: space-evenly;}
     width: 20%;
     font-weight: bold;
     font-size: 24px;
+    text-align: center;
+  }
+
+  .th {
+    font-size: 24px;
   }
 
   #blogmaintext {
     width: 40%;
     font-size: 16px;
+    text-align: center;
   }
 
   .modal {
