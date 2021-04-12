@@ -73,6 +73,8 @@
                                 cells = tr[i].getElementsByTagName("td");                          
                                  cell = cells[0].innerText;
                                 month = cell.split('-')[1];
+                                console.log(selectmonth);
+                                console.log(month);
                                 if (month != selectmonth){
                                     tr[i].style.display ="none";
                                 }
