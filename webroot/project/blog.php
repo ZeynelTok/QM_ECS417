@@ -57,15 +57,11 @@
                         include 'db.php';
                         $blogquery = "SELECT * FROM blogs order by dateandtime desc";
                         $output = mysqli_query($conn, $blogquery);
-                        echo "<table id='blogPosts'><thead><tr id='headerrow'>
-                        <th>Date/Time</th>
-                        <th>Title</th>
-                        <th>Blog Text</th>
-                      </tr></thead><tbody>";
+                        echo "<table id='blogPosts'>";
                         while ($row = mysqli_fetch_array($output)) {
                             echo "<tr id ='blogrow'><td id='blogdate'>" . $row['dateandtime'] . "</td><td id='blogtitle'>" . $row['title'] . "</td><td id='blogmaintext'>" . $row['maintext'] . "</td></tr>";
                         }
-                        echo "</tbody></table>";
+                        echo "</table>";
                         ?>
                     </section>
                     <script>
@@ -73,7 +69,7 @@
                             e.preventDefault();
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
-                            for (i = 1; i < tr.length; i++) {
+                            for (i = 0; i < tr.length; i++) {
                                 cells = tr[i].getElementsByTagName("td");
                                 cell = cells[0].innerText;
                                 month = cell.split('-')[1];
