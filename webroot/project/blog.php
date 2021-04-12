@@ -168,14 +168,14 @@
                                 previewbox.style.display = "block";
                                 previewtitle.innerText = document.getElementById("title").value;
                                 previewmaintext.innerText = document.getElementById("maintext").value;
-                                previewdateandtime.innerText = new Date();
+                                previewdateandtime.innerText = new Date().toLocaleString();
                                 console.log(title.value);
                                 console.log(maintext.value);
-                                // if (confirm("Do you want to post this blog or cancel and edit?")) {
-                                //     return true;
-                                // } else {
-                                //     return false;
-                                // }
+                                if (confirm("Do you want to post this blog or cancel and edit?")) {
+                                    return true;
+                                } else {
+                                    return false;
+                                }
                             }
                         </script>
                         <script>
