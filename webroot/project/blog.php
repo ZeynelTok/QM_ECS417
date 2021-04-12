@@ -176,7 +176,7 @@
                         <script>
                             function previewBlog(e, title, maintext) {
                                 e.preventDefault();
-                                previewbox = document.getElementById("previewmodal");
+                                previewbox = document.getElementById("previewbox");
                                 previewdateandtime = document.getElementById("previewdateandtime");
                                 previewtitle = document.getElementById("previewtitle");
                                 previewmaintext = document.getElementById("previewmaintext");
