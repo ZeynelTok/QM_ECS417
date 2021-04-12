@@ -248,8 +248,8 @@ justify-content: space-evenly;}
   }
 
   #blogrow {
-    border-bottom: 1px solid #000;
-    padding: 5px;
+    border-bottom: 2px solid #000;
+    padding: 10px;
   }
 
   td#blogtitle {
