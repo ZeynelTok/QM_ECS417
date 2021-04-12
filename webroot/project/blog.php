@@ -32,8 +32,8 @@
         <div class="column left">
             <article>
                 <h2>Blog</h2>
-                <form action="" onsubmit="orderBlog(event)" method="post">
-                    <select name="month" id="blogmonth">
+                <form action="" onsubmit="orderBlog(event, selectmonth)" method="post">
+                    <select name="selectmonth" id="selectmonth">
                         <option value="" selected="selected">Any Month</option>
                         <option value="1">January</option>
                         <option value="2">February</option>
@@ -48,7 +48,8 @@
                         <option value="11">November</option>
                         <option value="12">December</option>
                     </select>
-                    <input type="submit" id="Go" value="Go">
+                    <p>Blogs Posted in:</p>
+                    <input type="submit" id="Go" value="Search">
                 </form>
                 <div class="blogbox">
                     <section>
@@ -64,9 +65,8 @@
                         ?>
                     </section>
                     <script>
-                        function orderBlog(e) {
+                        function orderBlog(e, selectmonth) {
                             e.preventDefault();
-                            input = document.getElementById("blogmonth").value;
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
                             for (i = 0; i < tr.length; i++) {
@@ -76,12 +76,9 @@
                                  cell2 = cells[0].value;
                                  cell3 = cells[0].childNodes[0].value;
                                  console.log(cell);
-                                 console.log(cell2);
-                                 console.log(cell3);
                                 month = cell.split('-')[1];
                                  console.log(month);
-                                if (month != input){
-                                    console.log("here");
+                                if (month != selectmonth){
                                     tr[i].style.display ="none";
                                 }
                             }
