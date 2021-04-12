@@ -70,7 +70,7 @@
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
                             for (i = 0; i < tr.length; i++) {
-                                 date = tr[i].getElementById('blogdate').value;
+                                 date = tr[i].getElementsByTagName("td")[0].value;
                                  console.log(date);
                                 month = date.split('-')[1];
                                  console.log(month);
@@ -153,8 +153,6 @@
                             function alertWindow() {
                                 var title = document.getElementById("title");
                                 var maintext = document.getElementById("maintext");
-                                console.log(title.value);
-                                console.log(maintext.value);
                                 if (confirm("Are you sure you want to clear?")) {
                                     title.value = "";
                                     maintext.value = "";
