@@ -63,22 +63,23 @@
                         echo "</table>";
                         ?>
                     </section>
-                    <!-- <script>
+                    <script>
                         function orderBlog(e) {
                             e.preventDefault();
                             var input, filter, table, tr, td, i;
                             input = document.getElementById("blogmonth").value;
+                            console.log(input);
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
-                            td = table.getElementById("dateandtime");
                             for (i = 0; i < tr.length; i++) {
-                                 month =tr[i].td.value.getdate();
+                                 month =tr[i].cells[0].value.split('-')[1];
+                                 console.log(month);
                                 if (month != input){
                                     tr[i].style.display ="none";
                                 }
                             }
                         }
-                    </script> -->
+                    </script>
                 </div>
 
             </article>
