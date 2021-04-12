@@ -166,8 +166,8 @@
                                 var previewtitle = document.getElementById("previewtitle");
                                 var previewmaintext = document.getElementById("previewmaintext");
                                 previewbox.style.display = "block";
-                                previewtitle.innerText = title.value;
-                                previewmaintext.innerText = maintext.value;
+                                previewtitle.innerText = document.getElementById("title").value;
+                                previewmaintext.innerText = document.getElementById("maintext").value;
                                 previewdateandtime.innerText = new Date();
                                 console.log(title.value);
                                 console.log(maintext.value);
