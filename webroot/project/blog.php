@@ -188,7 +188,7 @@
                                 previewbox.style.display = "block";
                                 previewtitle.value = title.value;
                                 previewmaintext.value = maintext.value;
-                                previewdateandtime.value = new Date();
+                                previewdateandtime.value = 'test';
                                 console.log(previewtitle.value);
                                 console.log(previewmaintext.value);
                                 console.log(title.value);
