@@ -73,7 +73,7 @@
                             e.preventDefault();
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
-                            for (i = 0; i < tr.length; i++) {
+                            for (i = 1; i < tr.length; i++) {
                                 cells = tr[i].getElementsByTagName("td");
                                 cell = cells[0].innerText;
                                 month = cell.split('-')[1];
