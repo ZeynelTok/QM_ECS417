@@ -58,7 +58,7 @@
                         $output = mysqli_query($conn, $blogquery);
                         echo "<table id='blogPosts'>";
                         while ($row = mysqli_fetch_array($output)) {
-                            echo "<tr id ='blogrow'><td id='date'>" . $row['dateandtime'] . "</td><td id='blogtitle'>" . $row['title'] . "</td><td id='blogmaintext'>" . $row['maintext'] . "</td></tr>";
+                            echo "<tr id ='blogrow'><td id='blogdate'>" . $row['dateandtime'] . "</td><td id='blogtitle'>" . $row['title'] . "</td><td id='blogmaintext'>" . $row['maintext'] . "</td></tr>";
                         }
                         echo "</table>";
                         ?>
@@ -66,13 +66,13 @@
                     <script>
                         function orderBlog(e) {
                             e.preventDefault();
-                            var input, filter, table, tr, td, i;
                             input = document.getElementById("blogmonth").value;
-                            console.log(input);
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
                             for (i = 0; i < tr.length; i++) {
-                                 month =tr[i].cells[0].value.split('-')[1];
+                                 date = tr[i].getElementById('blogdate').value;
+                                 console.log(date);
+                                month = date.split('-')[1];
                                  console.log(month);
                                 if (month != input){
                                     tr[i].style.display ="none";
