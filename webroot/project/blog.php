@@ -34,7 +34,7 @@
                 <h2>Blog</h2>
                 <form action="" onsubmit="orderBlog(event, selectmonth)" method="post">
                     <select name="selectmonth" id="selectmonth">
-                        <option value="" selected="selected">Any Month</option>
+                        <option value="00" selected="selected">Any Month</option>
                         <option value="01">January</option>
                         <option value="02">February</option>
                         <option value="03">March</option>
@@ -70,16 +70,20 @@
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
                             for (i = 0; i < tr.length; i++) {
-                                cells = tr[i].getElementsByTagName("td");                          
-                                 cell = cells[0].innerText;
+                                cells = tr[i].getElementsByTagName("td");
+                                cell = cells[0].innerText;
                                 month = cell.split('-')[1];
                                 console.log(selectmonth.value);
                                 console.log(month);
-                                if (month != selectmonth.value){
-                                    tr[i].style.display ="none";
+                                if (selectmonth.value != '00') {
+                                    if (month != selectmonth.value) {
+                                        tr[i].style.display = "none";
+                                    } else {
+                                        tr[i].style.display = "block";
+                                    }
                                 }
                                 else {
-                                    tr[i].style.display ="block";
+                                    tr[i].style.display = "block";
                                 }
                             }
                         }
