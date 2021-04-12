@@ -71,7 +71,7 @@
                             tr = table.getElementsByTagName("tr");
                             for (i = 0; i < tr.length; i++) {
                                 td = tr[i].getElementsByTagName("td");
-                                cell = td[0];
+                                cell = td[0].value;
                                  date = cell.value;
                                  console.log(date);
                                  console.log(td);
