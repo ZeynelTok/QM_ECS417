@@ -17,9 +17,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         else
         {           
             header('Location: blog.php');
+            exit;
             $message = "Incorrect Email/Password";
             echo "<script type='text/javascript'>alert('$message');</script>";
-            exit;
         }
         $conn->close();   
 }
