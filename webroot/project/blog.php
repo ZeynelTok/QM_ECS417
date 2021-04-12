@@ -132,9 +132,9 @@
                         <div class="modal-content">
                             <table>
                                 <tr>
-                                    <td id='previewdateandtime'></td>
-                                    <td id='previewtitle'></td>
-                                    <td id='previewmaintext'></td>
+                                    <td id='previewdateandtime'>date</td>
+                                    <td id='previewtitle'>title</td>
+                                    <td id='previewmaintext'>maintext</td>
                                 </tr>
                             </table>
                         </div>
