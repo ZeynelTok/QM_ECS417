@@ -178,9 +178,9 @@
                                 var previewtitle = document.getElementById("previewtitle");
                                 var previewmaintext = document.getElementById("previewmaintext");
                                 previewmodal.style.display ="block";
-                                previewtitle = title;
-                                previewmaintext = maintext;
-                                previewdateandtime = new Date();
+                                previewtitle.value = title;
+                                previewmaintext.value = maintext;
+                                previewdateandtime.value = new Date();
                                 if (confirm("Do you want to post this blog or cancel and edit?")) {
                                     return true;
                                 }
