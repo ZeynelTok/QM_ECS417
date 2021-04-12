@@ -159,6 +159,26 @@
                         <input type="submit" name="Post" id="Post" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Post">
                         <input type="submit" name="Preview" id="Preview" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Preview" onclick="previewBlog(event, title,maintext)">
                         <script>
+                            function previewBlog(e, title, maintext) {
+                                e.preventDefault();
+                                var previewbox = document.getElementById("previewbox");
+                                var previewdateandtime = document.getElementById("previewdateandtime");
+                                var previewtitle = document.getElementById("previewtitle");
+                                var previewmaintext = document.getElementById("previewmaintext");
+                                previewbox.style.display = "block";
+                                previewtitle.innerText = title.value;
+                                previewmaintext.innerText = maintext.value;
+                                previewdateandtime.innerText = new Date();
+                                console.log(title.value);
+                                console.log(maintext.value);
+                                // if (confirm("Do you want to post this blog or cancel and edit?")) {
+                                //     return true;
+                                // } else {
+                                //     return false;
+                                // }
+                            }
+                        </script>
+                        <script>
                             function validateForm(e, title, maintext) {
                                 //var title = document.getElementById("title");
                                 //var maintext = document.getElementById("maintext");
@@ -178,28 +198,7 @@
                                 }
                             }
                         </script>
-                        <script>
-                            function previewBlog(e, title, maintext) {
-                                e.preventDefault();
-                                var previewbox = document.getElementById("previewbox");
-                                var previewdateandtime = document.getElementById("previewdateandtime");
-                                var previewtitle = document.getElementById("previewtitle");
-                                var previewmaintext = document.getElementById("previewmaintext");
-                                previewbox.style.display = "block";
-                                previewtitle.innerText = title.value;
-                                previewmaintext.innerText = maintext.value;
-                                previewdateandtime.innerText = 'test';
-                                console.log(previewtitle.value);
-                                console.log(previewmaintext.value);
-                                console.log(title.value);
-                                console.log(maintext.value);
-                                // if (confirm("Do you want to post this blog or cancel and edit?")) {
-                                //     return true;
-                                // } else {
-                                //     return false;
-                                // }
-                            }
-                        </script>
+
                         <script>
                             function alertWindow() {
                                 var title = document.getElementById("title");
