@@ -32,7 +32,7 @@
         <div class="column left">
             <article>
                 <h2>Blog</h2>
-                <form action="" onSubmit="orderBlog(event)" method="post">
+                <form action="" onsubmit="orderBlog(event)" method="post">
                     <select name="month" id="blogmonth">
                         <option value="" selected="selected">Any Month</option>
                         <option value="1">January</option>
