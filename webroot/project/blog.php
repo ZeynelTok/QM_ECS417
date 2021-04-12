@@ -177,7 +177,7 @@
                                 var previewdateandtime = document.getElementById("previewdateandtime");
                                 var previewtitle = document.getElementById("previewtitle");
                                 var previewmaintext = document.getElementById("previewmaintext");
-                                modal.style.display ="block";
+                                previewmodal.style.display ="block";
                                 previewtitle = title;
                                 previewmaintext = maintext;
                                 previewdateandtime = new Date();
