@@ -176,11 +176,11 @@
                         <script>
                             function previewBlog(e, title, maintext) {
                                 e.preventDefault();
-                                previewmodal = document.getElementById("previewmodal");
+                                previewbox = document.getElementById("previewmodal");
                                 previewdateandtime = document.getElementById("previewdateandtime");
                                 previewtitle = document.getElementById("previewtitle");
                                 previewmaintext = document.getElementById("previewmaintext");
-                                previewmodal.style.display = "block";
+                                previewbox.style.display = "block";
                                 previewtitle.value = title.value;
                                 previewmaintext.value = maintext.value;
                                 previewdateandtime.value = new Date();
