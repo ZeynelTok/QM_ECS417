@@ -70,11 +70,16 @@
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
                             for (i = 0; i < tr.length; i++) {
-                                 date = tr[i].getElementsByTagName("td")[0].value;
+                                td = tr[i].getElementsByTagName("td");
+                                cell = td[0];
+                                 date = cell.value;
                                  console.log(date);
+                                 console.log(td);
+                                 console.log(cell);
                                 month = date.split('-')[1];
                                  console.log(month);
                                 if (month != input){
+                                    console.log("here");
                                     tr[i].style.display ="none";
                                 }
                             }
