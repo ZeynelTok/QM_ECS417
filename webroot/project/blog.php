@@ -51,14 +51,19 @@
                     <label for="Search">Blogs Posted In:</label>
                     <input type="submit" id="Go" value="Search">
                 </form>
-                <div id="previewbox" class="blogbox">                  
-                        <table>
-                            <tr>
-                                <td id='previewdateandtime'>date</td>
-                                <td id='previewtitle'>title</td>
-                                <td id='previewmaintext'>maintext</td>
-                            </tr>
-                        </table>
+                <div id="previewbox" class="blogbox">
+                    <table>
+                        <tr>
+                            <th id='blogdate'>Date & Time</th>
+                            <th id='blogtitle'>Title</th>
+                            <th id='blogmaintext'>Blog Text</th>
+                        </tr>
+                        <tr>
+                            <td id='previewdateandtime'>date</td>
+                            <td id='previewtitle'>title</td>
+                            <td id='previewmaintext'>maintext</td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="blogbox">
                     <section>
@@ -176,10 +181,10 @@
                         <script>
                             function previewBlog(e, title, maintext) {
                                 e.preventDefault();
-                                previewbox = document.getElementById("previewbox");
-                                previewdateandtime = document.getElementById("previewdateandtime");
-                                previewtitle = document.getElementById("previewtitle");
-                                previewmaintext = document.getElementById("previewmaintext");
+                                var previewbox = document.getElementById("previewbox");
+                                var previewdateandtime = document.getElementById("previewdateandtime");
+                                var previewtitle = document.getElementById("previewtitle");
+                                var previewmaintext = document.getElementById("previewmaintext");
                                 previewbox.style.display = "block";
                                 previewtitle.value = title.value;
                                 previewmaintext.value = maintext.value;
