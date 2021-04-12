@@ -137,6 +137,7 @@
                         </div>
 
                         <input type="submit" name="Post" id="Post" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Post">
+                        <input type="submit" name="Preview" id="Preview" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Preview"'>
                         <script>
                             function validateForm(e, title, maintext) {
                                 //var title = document.getElementById("title");
@@ -157,6 +158,11 @@
                                 }
                             }
                         </script>
+                        <!-- <script>
+                            function previewBlog() {
+                                
+                            }
+                        </script> -->
                         <script>
                             function alertWindow() {
                                 var title = document.getElementById("title");
