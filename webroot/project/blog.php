@@ -125,21 +125,21 @@
                 </div>
             </aside>
             <aside>
-                <div id="previewmodal" class="modal">
 
-                    <div class="modal-content">
-                        <table>
-                            <tr>
-                                <td id='previewdateandtime'></td>
-                                <td id='previewtitle'></td>
-                                <td id ='previewmaintext'></td>
-                            </tr>
-                        </table>
-                    </div>
-
-                </div>
                 <div class="box">
+                    <div id="previewmodal" class="modal">
 
+                        <div class="modal-content">
+                            <table>
+                                <tr>
+                                    <td id='previewdateandtime'></td>
+                                    <td id='previewtitle'></td>
+                                    <td id='previewmaintext'></td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
                     <h2>Add Blog</h2>
 
                     <form action="addBlog.php" onsubmit="validateForm(event,title,maintext)" method="post">
@@ -177,22 +177,21 @@
                             }
                         </script>
                         <script>
-                            function previewBlog(e, title,maintext) {
+                            function previewBlog(e, title, maintext) {
                                 e.preventDefault();
                                 var previewmodal = document.getElementById("previewmodal");
                                 var previewdateandtime = document.getElementById("previewdateandtime");
                                 var previewtitle = document.getElementById("previewtitle");
                                 var previewmaintext = document.getElementById("previewmaintext");
-                                previewmodal.style.display ="block";
+                                previewmodal.style.display = "block";
                                 previewtitle.value = title;
                                 previewmaintext.value = maintext;
                                 previewdateandtime.value = new Date();
-                                if (confirm("Do you want to post this blog or cancel and edit?")) {
-                                    return true;
-                                }
-                                else {
-                                    return false;
-                                }
+                                // if (confirm("Do you want to post this blog or cancel and edit?")) {
+                                //     return true;
+                                // } else {
+                                //     return false;
+                                // }
                             }
                         </script>
                         <script>
