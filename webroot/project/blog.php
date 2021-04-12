@@ -79,10 +79,10 @@
                                     if (month != selectmonth.value) {
                                         tr[i].style.display = "none";
                                     } else {
-                                        tr[i].style.display = "table-header-group";
+                                        tr[i].style.display = "block";
                                     }
                                 } else {
-                                    tr[i].style.display = "table-header-group";
+                                    tr[i].style.display = "block";
                                 }
                             }
                         }

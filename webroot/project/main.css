@@ -244,6 +244,15 @@ justify-content: space-evenly;}
     padding: 5px;
   }
 
+  #blogtitle {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  #blogmaintext {
+    font-size: 12px;
+  }
+
   .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
