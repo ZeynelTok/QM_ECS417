@@ -81,8 +81,7 @@
                                     } else {
                                         tr[i].style.display = "block";
                                     }
-                                }
-                                else {
+                                } else {
                                     tr[i].style.display = "block";
                                 }
                             }
@@ -120,6 +119,19 @@
                 </div>
             </aside>
             <aside>
+                <div id="previewmodal" class="modal">
+
+                    <div class="modal-content">
+                        <table>
+                            <tr>
+                                <td id='previewdateandtime'></td>
+                                <td id='previewtitle'></td>
+                                <td id ='previewmaintext'>Age</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
                 <div class="box">
 
                     <h2>Add Blog</h2>
@@ -137,7 +149,7 @@
                         </div>
 
                         <input type="submit" name="Post" id="Post" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Post">
-                        <input type="submit" name="Preview" id="Preview" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Preview"'>
+                        <input type="submit" name="Preview" id="Preview" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Preview" onclick="return previewBlog(title,maintext)">
                         <script>
                             function validateForm(e, title, maintext) {
                                 //var title = document.getElementById("title");
@@ -158,11 +170,24 @@
                                 }
                             }
                         </script>
-                        <!-- <script>
-                            function previewBlog() {
-                                
+                        <script>
+                            function previewBlog(title,maintext) {
+                                var previewmodal = document.getElementById("previewmodal");
+                                var previewdateandtime = document.getElementById("previewdateandtime");
+                                var previewtitle = document.getElementById("previewtitle");
+                                var previewmaintext = document.getElementById("previewmaintext");
+                                modal.style.display ="block";
+                                previewtitle = title;
+                                previewmaintext = maintext;
+                                previewdateandtime = new Date();
+                                if (confirm("Do you want to post this blog or cancel and edit?")) {
+                                    return true;
+                                }
+                                else {
+                                    return false;
+                                }
                             }
-                        </script> -->
+                        </script>
                         <script>
                             function alertWindow() {
                                 var title = document.getElementById("title");
