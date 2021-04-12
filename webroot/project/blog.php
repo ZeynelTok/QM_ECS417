@@ -70,8 +70,14 @@
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
                             for (i = 0; i < tr.length; i++) {
-                                cell = tr[i].getElementsByTagName("td")[0].InnerText;                          
+                                cells = tr[i].getElementsByTagName("td");                          
+                                 console.log(cells);
+                                 cell = cells[0].innerText;
+                                 cell2 = cells[0].value;
+                                 cell3 = cells[0].childNodes[0].value;
                                  console.log(cell);
+                                 console.log(cell2);
+                                 console.log(cell3);
                                 month = cell.split('-')[1];
                                  console.log(month);
                                 if (month != input){
