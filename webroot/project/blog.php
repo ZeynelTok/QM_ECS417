@@ -70,13 +70,9 @@
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
                             for (i = 0; i < tr.length; i++) {
-                                td = tr[i].getElementsByTagName("td");
-                                cell = td[0].value;
-                                 date = cell.value;
-                                 console.log(date);
-                                 console.log(td);
+                                cell = tr[i].getElementsByTagName("td#blogdate").innerHTML;                                
                                  console.log(cell);
-                                month = date.split('-')[1];
+                                month = cell.split('-')[1];
                                  console.log(month);
                                 if (month != input){
                                     console.log("here");
