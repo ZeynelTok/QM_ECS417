@@ -51,6 +51,15 @@
                     <label for="Search">Blogs Posted In:</label>
                     <input type="submit" id="Go" value="Search">
                 </form>
+                <div id="previewbox" class="blogbox">                  
+                        <table>
+                            <tr>
+                                <td id='previewdateandtime'>date</td>
+                                <td id='previewtitle'>title</td>
+                                <td id='previewmaintext'>maintext</td>
+                            </tr>
+                        </table>
+                </div>
                 <div class="blogbox">
                     <section>
                         <?php
@@ -127,19 +136,7 @@
             <aside>
 
                 <div class="box">
-                    <div id="previewmodal" class="modal">
 
-                        <div class="modal-content">
-                            <table>
-                                <tr>
-                                    <td id='previewdateandtime'>date</td>
-                                    <td id='previewtitle'>title</td>
-                                    <td id='previewmaintext'>maintext</td>
-                                </tr>
-                            </table>
-                        </div>
-
-                    </div>
                     <h2>Add Blog</h2>
 
                     <form action="addBlog.php" onsubmit="validateForm(event,title,maintext)" method="post">
@@ -155,7 +152,7 @@
                         </div>
 
                         <input type="submit" name="Post" id="Post" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Post">
-                        <input type="submit" name="Preview" id="Preview" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Preview" onclick="return previewBlog(event, title,maintext)">
+                        <input type="submit" name="Preview" id="Preview" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Preview" onclick="previewBlog(event, title,maintext)">
                         <script>
                             function validateForm(e, title, maintext) {
                                 //var title = document.getElementById("title");
