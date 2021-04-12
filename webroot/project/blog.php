@@ -48,7 +48,7 @@
                         <option value="11">November</option>
                         <option value="12">December</option>
                     </select>
-                    <p>Blogs Posted in:</p>
+                    <label for="Search">Blogs Posted In:</label>
                     <input type="submit" id="Go" value="Search">
                 </form>
                 <div class="blogbox">
@@ -71,15 +71,13 @@
                             tr = table.getElementsByTagName("tr");
                             for (i = 0; i < tr.length; i++) {
                                 cells = tr[i].getElementsByTagName("td");                          
-                                 console.log(cells);
                                  cell = cells[0].innerText;
-                                 cell2 = cells[0].value;
-                                 cell3 = cells[0].childNodes[0].value;
-                                 console.log(cell);
                                 month = cell.split('-')[1];
-                                 console.log(month);
                                 if (month != selectmonth){
                                     tr[i].style.display ="none";
+                                }
+                                else {
+                                    tr[i].style.display ="";
                                 }
                             }
                         }
