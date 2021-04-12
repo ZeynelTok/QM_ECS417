@@ -179,16 +179,18 @@
                         <script>
                             function previewBlog(e, title, maintext) {
                                 e.preventDefault();
-                                var previewmodal = document.getElementById("previewmodal");
-                                var previewdateandtime = document.getElementById("previewdateandtime");
-                                var previewtitle = document.getElementById("previewtitle");
-                                var previewmaintext = document.getElementById("previewmaintext");
+                                previewmodal = document.getElementById("previewmodal");
+                                previewdateandtime = document.getElementById("previewdateandtime");
+                                previewtitle = document.getElementById("previewtitle");
+                                previewmaintext = document.getElementById("previewmaintext");
                                 previewmodal.style.display = "block";
-                                previewtitle.value = title;
-                                previewmaintext.value = maintext;
+                                previewtitle.value = title.value;
+                                previewmaintext.value = maintext.value;
                                 previewdateandtime.value = new Date();
                                 console.log(previewtitle.value);
                                 console.log(previewmaintext.value);
+                                console.log(title.value);
+                                console.log(maintext.value);
                                 // if (confirm("Do you want to post this blog or cancel and edit?")) {
                                 //     return true;
                                 // } else {
