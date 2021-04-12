@@ -187,6 +187,8 @@
                                 previewtitle.value = title;
                                 previewmaintext.value = maintext;
                                 previewdateandtime.value = new Date();
+                                console.log(previewtitle.value);
+                                console.log(previewmaintext.value);
                                 // if (confirm("Do you want to post this blog or cancel and edit?")) {
                                 //     return true;
                                 // } else {
