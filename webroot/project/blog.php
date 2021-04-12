@@ -85,10 +85,10 @@
                                     if (month != selectmonth.value) {
                                         tr[i].style.display = "none";
                                     } else {
-                                        tr[i].style.display = "block";
+                                        tr[i].style.display = "";
                                     }
                                 } else {
-                                    tr[i].style.display = "block";
+                                    tr[i].style.display = "";
                                 }
                             }
                         }
