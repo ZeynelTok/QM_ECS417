@@ -157,7 +157,7 @@
                         </div>
 
                         <input type="submit" name="Post" id="Post" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Post">
-                        <input type="submit" name="Preview" id="Preview" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Preview" onclick="previewBlog(event, title,maintext)">
+                        <input type="submit" name="Preview" id="Preview" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Preview" onclick="return previewBlog(event, title,maintext)">
                         <script>
                             function previewBlog(e, title, maintext) {
                                 e.preventDefault();
