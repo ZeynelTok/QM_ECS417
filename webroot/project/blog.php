@@ -57,15 +57,15 @@
                         include 'db.php';
                         $blogquery = "SELECT * FROM blogs order by dateandtime desc";
                         $output = mysqli_query($conn, $blogquery);
-                        echo "<table id='blogPosts'>  <tr id='headerrow'>
+                        echo "<table id='blogPosts'><thead><tr id='headerrow'>
                         <th>Date/Time</th>
                         <th>Title</th>
                         <th>Blog Text</th>
-                      </tr>";
+                      </tr></thead><tbody>";
                         while ($row = mysqli_fetch_array($output)) {
                             echo "<tr id ='blogrow'><td id='blogdate'>" . $row['dateandtime'] . "</td><td id='blogtitle'>" . $row['title'] . "</td><td id='blogmaintext'>" . $row['maintext'] . "</td></tr>";
                         }
-                        echo "</table>";
+                        echo "</tbody></table>";
                         ?>
                     </section>
                     <script>
