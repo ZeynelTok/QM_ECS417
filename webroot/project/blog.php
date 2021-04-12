@@ -70,11 +70,9 @@
                             table = document.getElementById("blogPosts");
                             tr = table.getElementsByTagName("tr");
                             for (i = 0; i < tr.length; i++) {
-                                td = tr[i].getElementsById("td");      
-                                console.log(td);
-                                cell = td[0].innerHTML;                          
+                                cell = tr[i].getElementsByTagName("td")[0];                          
                                  console.log(cell);
-                                month = cell.split('-')[1];
+                                month = cell.InnerHTML.split('-')[1];
                                  console.log(month);
                                 if (month != input){
                                     console.log("here");
