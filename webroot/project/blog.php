@@ -72,8 +72,8 @@
                             for (i = 0; i < tr.length; i++) {
                                 cell = tr[i].getElementsByTagName("td")[0];                          
                                  console.log(cell);
-                                 console.log(cell.InnerHTML);
-                                month = cell.InnerHTML.split('-')[1];
+                                 console.log(cell.InnerText);
+                                month = cell.split('-')[1];
                                  console.log(month);
                                 if (month != input){
                                     console.log("here");
