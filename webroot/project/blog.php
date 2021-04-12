@@ -126,7 +126,7 @@
                             <tr>
                                 <td id='previewdateandtime'></td>
                                 <td id='previewtitle'></td>
-                                <td id ='previewmaintext'>Age</td>
+                                <td id ='previewmaintext'></td>
                             </tr>
                         </table>
                     </div>
@@ -149,7 +149,7 @@
                         </div>
 
                         <input type="submit" name="Post" id="Post" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Post">
-                        <input type="submit" name="Preview" id="Preview" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Preview" onclick="return previewBlog(title,maintext)">
+                        <input type="submit" name="Preview" id="Preview" <?= ($disable ? " disabled=\"disabled\"" : ""); ?> value="Preview" onclick="return previewBlog(event, title,maintext)">
                         <script>
                             function validateForm(e, title, maintext) {
                                 //var title = document.getElementById("title");
@@ -171,7 +171,8 @@
                             }
                         </script>
                         <script>
-                            function previewBlog(title,maintext) {
+                            function previewBlog(e, title,maintext) {
+                                e.preventDefault();
                                 var previewmodal = document.getElementById("previewmodal");
                                 var previewdateandtime = document.getElementById("previewdateandtime");
                                 var previewtitle = document.getElementById("previewtitle");
