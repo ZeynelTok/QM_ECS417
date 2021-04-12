@@ -261,12 +261,15 @@ justify-content: space-evenly;}
 
   th#blogdate {
     width: 10%;
+    font-size: 30px;
   }
   th#blogtitle {
     width: 20%;
+    font-size: 30px;
   }
 th#blogmaintext {
   width: 60%;
+  font-size: 30px;
 }
   td#blogmaintext {
     width: 60%;
