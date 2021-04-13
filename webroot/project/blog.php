@@ -66,10 +66,11 @@
                     </table>
                     <form action="addBlog.php" method="post">
 
-                        <input type="submit" name="PreviewConfirmed" id="PreviewConfirmed" value="Confirm" onclick="previewconfirmed()">
+                        <input type="submit" name="PreviewConfirmed" id="PreviewConfirmed" value="Confirm" onclick="previewconfirmed(event)">
                         <input type="submit" name="PreviewCancelled" id="Cancelled" value="Cancel" onclick="previewcancelled(event)">
                         <script>
-                            function previewconfirmed() {
+                            function previewconfirmed(e) {
+                                e.preventDefault();
                                 var form = new FormData();
                                 form.append("title",document.getElementById("title").value);
                                 form.append("maintext", document.getElementById("maintext").value); 
@@ -84,6 +85,7 @@
                                 var request = new XMLHttpRequest();
                                 request.open("POST", "addBlog.php");
                                 request.send(form);
+                                window.location.reload();
                             }
                         </script>
                         <script>
