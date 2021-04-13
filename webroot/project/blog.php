@@ -64,10 +64,10 @@
                             <td id='previewmaintext'>maintext</td>
                         </tr>
                     </table>
-                    <form action="" method="">
+                    <form action="" method="" onsubmit="previewconfirmed(event)">
 
-                        <input type="submit" name="PreviewConfirmed" id="PreviewConfirmed" value="Confirm" onclick="previewconfirmed(event)">
-                        <input type="submit" name="PreviewCancelled" id="Cancelled" value="Cancel" onclick="previewcancelled(event)">
+                        <input type="submit" name="PreviewConfirmed" id="PreviewConfirmed" value="Confirm" onclick="validateForm(event,title,maintext)">
+                        <input type="button" name="PreviewCancelled" id="Cancelled" value="Cancel" onclick="previewcancelled(event)">
                         <script>
                             function previewconfirmed(e) {
                                 var form = new FormData();
