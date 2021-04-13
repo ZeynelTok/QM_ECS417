@@ -64,6 +64,37 @@
                             <td id='previewmaintext'>maintext</td>
                         </tr>
                     </table>
+                    <form action="addBlog.php" method="post">
+
+                        <input type="submit" name="PreviewConfirmed" id="PreviewConfirmed" value="Confirm" onclick="previewconfirmed(event)">
+                        <input type="submit" name="PreviewCancelled" id="Cancelled" value="Cancel" onclick="previewcancelled(event)">
+                        <script>
+                            function previewconfirmed(e) {
+                                e.preventDefault();
+                                var form = new FormData();
+                                form.append("title",document.getElementById("title").value);
+                                form.append("maintext", document.getElementById("maintext").value); 
+
+
+                                // var content = '<a id="a"><b id="b">hey!</b></a>'; 
+                                // var blob = new Blob([content], {
+                                //     type: "text/xml"
+                                // });
+                                // formData.append("webmasterfile", blob);
+
+                                var request = new XMLHttpRequest();
+                                request.open("POST", "addBlog.php");
+                                request.send(formData);
+                            }
+                        </script>
+                        <script>
+                            function previewcancelled(e) {
+                                e.preventDefault();
+                                previewbox.style.display = "none";
+                               
+                            }
+                        </script>
+                    </form>
                 </div>
                 <div class="blogbox">
                     <section>
@@ -171,11 +202,6 @@
                                 previewdateandtime.innerText = new Date().toLocaleString();
                                 console.log(title.value);
                                 console.log(maintext.value);
-                                if (confirm("Do you want to post this blog or cancel and edit?")) {
-                                    return true;
-                                } else {
-                                    return false;
-                                }
                             }
                         </script>
                         <script>
