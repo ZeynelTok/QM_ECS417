@@ -66,11 +66,10 @@
                     </table>
                     <form action="addBlog.php" method="post">
 
-                        <input type="submit" name="PreviewConfirmed" id="PreviewConfirmed" value="Confirm" onclick="previewconfirmed(event)">
+                        <input type="submit" name="PreviewConfirmed" id="PreviewConfirmed" value="Confirm" onclick="previewconfirmed()">
                         <input type="submit" name="PreviewCancelled" id="Cancelled" value="Cancel" onclick="previewcancelled(event)">
                         <script>
-                            function previewconfirmed(e) {
-                                e.preventDefault();
+                            function previewconfirmed() {
                                 var form = new FormData();
                                 form.append("title",document.getElementById("title").value);
                                 form.append("maintext", document.getElementById("maintext").value); 
@@ -124,8 +123,6 @@
                                 cells = tr[i].getElementsByTagName("td");
                                 cell = cells[0].innerText;
                                 month = cell.split('-')[1];
-                                console.log(selectmonth.value);
-                                console.log(month);
                                 if (selectmonth.value != '00') {
                                     if (month != selectmonth.value) {
                                         tr[i].style.display = "none";
