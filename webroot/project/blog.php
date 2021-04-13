@@ -84,7 +84,7 @@
 
                                 var request = new XMLHttpRequest();
                                 request.open("POST", "addBlog.php");
-                                request.send(formData);
+                                request.send(form);
                             }
                         </script>
                         <script>
