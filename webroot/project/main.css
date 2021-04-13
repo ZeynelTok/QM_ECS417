@@ -237,7 +237,7 @@ justify-content: space-evenly;}
   #blogPosts {
     width: 90%;
   }
-  td#blogdate {
+  td#blogdate, #previewdateandtime {
     width: 10%;
     font-style: italic;
     font-size: 12px;
@@ -252,7 +252,7 @@ justify-content: space-evenly;}
     padding: 10px;
   }
 
-  td#blogtitle {
+  td#blogtitle, #previewtitle {
     width: 20%;
     font-weight: bold;
     font-size: 24px;
@@ -267,11 +267,11 @@ justify-content: space-evenly;}
     width: 20%;
     font-size: 24px;
   }
-th#blogmaintext {
+th#blogmaintext, {
   width: 60%;
   font-size: 24px;
 }
-  td#blogmaintext {
+  td#blogmaintext, #previewmaintext {
     width: 60%;
     font-size: 16px;
     text-align: center;

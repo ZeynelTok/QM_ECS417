@@ -2,6 +2,8 @@
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {  
+    echo "im here";
+    print_r($_POST);
     include 'db.php';   
     date_default_timezone_set('Europe/London');
     $date = date('Y-m-d H:i:s');
