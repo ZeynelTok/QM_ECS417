@@ -1,5 +1,12 @@
 
+## Work done for QMUL ECS417 Fundamentals of Web Technology Project in PHP
 
+### Uses CakePHP and OpenShift for deployments
+
+### Old & Not Maintained Uni Project
+
+
+## Contents
 <!-- toc -->
 
 - [CakePHP Sample App on OpenShift](#cakephp-sample-app-on-openshift)
