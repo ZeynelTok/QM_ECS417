@@ -1,11 +1,12 @@
+### ![status: archived](https://img.shields.io/badge/status-archived-red) ⚠️ Archived Project
 
-## Work done for QMUL ECS417 Fundamentals of Web Technology Project in PHP
+**This repository is no longer maintained and kept for reference only.**
 
-### Uses CakePHP and OpenShift for deployments
+---
 
-### Old & Not Maintained Uni Project
-
-
+## About
+Work done for **QMUL ECS417 Fundamentals of Web Technology** (PHP).  
+Uses **CakePHP** and **OpenShift** for deployments.
 ## Contents
 <!-- toc -->
 
