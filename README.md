@@ -1,5 +1,9 @@
-### ![status: archived](https://img.shields.io/badge/status-archived-red) ⚠️ Archived Project
+![status: archived](https://img.shields.io/badge/status-archived-red)
+![language: PHP](https://img.shields.io/badge/language-PHP-%23777BB4)
 
+---
+
+### ⚠️ Archived Project
 **This repository is no longer maintained and kept for reference only.**
 
 ---
